@@ -2,7 +2,7 @@
 //  LevelSelect.m
 //  FlushPuls3
 //
-//  Created by  荒木 力 12/09/20.
+//  Created by  荒木  12/09/20.
 //  Copyright (c) 2012年. All rights reserved.
 //
 
