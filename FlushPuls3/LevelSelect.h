@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LevelSelect : UIViewController{
+@interface LevelSelect : UINavigationController{
     
     
     UIButton *level1;

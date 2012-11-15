@@ -37,8 +37,7 @@ Flash *flash;
 {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
+    // Do any additional setup after loading the view from its nib.    
     flash.levelSelect = self;
     
     ud = [NSUserDefaults standardUserDefaults];
@@ -92,10 +91,10 @@ Flash *flash;
     [level5 removeFromSuperview];
     
     
-       NSString *titles[10] = {
-        @"1-1",@"1-2", @"1-3", @"1-4", @"1-5", @"1-6", @"1-7", @"1-8", @"1-9", @"1-10"
-    };
-    
+//       NSString *titles[10] = {
+//        @"1-1",@"1-2", @"1-3", @"1-4", @"1-5", @"1-6", @"1-7", @"1-8", @"1-9", @"1-10"
+//    };
+//    
     posy = 50;
     int tate = 100;
     int addy = 80;
@@ -103,13 +102,12 @@ Flash *flash;
     for (int i = 0; i<10; i++) {
          selBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
         [selBtn2 setFrame:CGRectMake(posy, tate, 70, 50)];
-        [selBtn2 setTitle:titles[i] forState:UIControlStateNormal];
         [selBtn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [selBtn2 addTarget:self action:@selector(preStart:) forControlEvents:UIControlEventTouchUpInside];
         [selBtn2 setTag:tag];
         
         //ボタンに画像を入れる
-        image = [UIImage imageNamed:@"1_1btn.png"];
+        image = [UIImage imageNamed:@"sample1.png"];
         [selBtn2 setBackgroundImage:image forState:UIControlStateNormal];
         
         if (posy == 370) {
@@ -121,7 +119,10 @@ Flash *flash;
                 posy += addy;
          tag++;
         NSLog(@"tag:%d",selBtn2.tag);
-       
+        
+        
+        UIBarButtonItem *returnBtn = [[UIBarButtonItem alloc]
+                                     initWithTitle:@"戻る" style:UIBarButtonItemStylePlain target:self action:@selector(a)];
     }
     
     //[ud2 setInteger:1 forKey:@"1"];
@@ -445,6 +446,7 @@ Flash *flash;
     flash.finalLevel = sender.tag;
     flash.view.frame = self.view.bounds;
     [self.view addSubview:flash.view];
+    [preStartBtn removeFromSuperview];
 }
 
 - (void)viewDidUnload

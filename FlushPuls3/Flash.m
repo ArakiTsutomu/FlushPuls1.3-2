@@ -46,6 +46,7 @@ LevelSelect *levelSelect;
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor blackColor];
     
+    
     label = [[UILabel alloc] initWithFrame:CGRectMake(120, 100, 300, 100)];
     label.text = @"READY";
     label.backgroundColor = [UIColor blackColor];
@@ -60,7 +61,7 @@ LevelSelect *levelSelect;
     
     ud = [NSUserDefaults standardUserDefaults];
        
-        randCount = 0;
+    randCount = 0;
     
     levelSelectUd = [ud integerForKey:@"level"];
     resultUd = [ud integerForKey:@"result"];
@@ -95,6 +96,7 @@ LevelSelect *levelSelect;
 }
 
 
+//問題の桁数を決める
 -(void)random{
     label.font = [UIFont systemFontOfSize:80];
     ran1 = 1 + arc4random() %9;
@@ -106,7 +108,7 @@ LevelSelect *levelSelect;
     
     
     ///////////////Level1///////////////////
-       if (self.finalLevel == 11) {
+       if (levelSelectUd == 11) {
         if (randCount >= 5) {
             [tim invalidate];
             [self textField];
@@ -126,9 +128,31 @@ LevelSelect *levelSelect;
                [self textField];
            }else{
                [label setText:getRun1];
+               [label sizeToFit];
                total += ran1;
                randCount++;
+               
+               
+               //数字をランダムに表示する
+               CGPoint point;
+               point.x = 200;
+               point.y = 300;
+               
+               int w2 = label.frame.size.width / 2;
+               int h2 = label.frame.size.height / 2;
+               srandom(time(NULL));
+               int x = rand() % (480 - w2);
+               int y = rand() % (320 - h2 * 2) + h2;
+               if ( w2 > x ) {
+                   x = w2;
+               }
+//               if ( h2 > y ) {
+//                   y = h2;
+//               }
+               
+               label.center = CGPointMake(x, y);
                [self.view addSubview:label];
+               
                [self performSelector:@selector(labelRemove) withObject:nil afterDelay:0.8f];
            }
        
@@ -231,6 +255,7 @@ LevelSelect *levelSelect;
             [label setText:getRun1];
             total += ran1;
             randCount++;
+            
             [self.view addSubview:label];
             [self performSelector:@selector(labelRemove) withObject:nil afterDelay:0.8f];
         }

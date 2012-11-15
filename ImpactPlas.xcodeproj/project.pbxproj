@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D29F4FB1654E15900D369B2 /* impact1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D29F4FA1654E15900D369B2 /* impact1-1.png */; };
+		4D29F4FE1654E38B00D369B2 /* sample1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D29F4FD1654E38B00D369B2 /* sample1.png */; };
 		4D3F750D1626F52F0054B1D7 /* 1_1btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3F750C1626F52F0054B1D7 /* 1_1btn.png */; };
 		4DB5DB70160B09F70004233D /* Flash.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5DB6E160B09F70004233D /* Flash.m */; };
 		4DB5DB71160B09F70004233D /* Flash.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB5DB6F160B09F70004233D /* Flash.xib */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D29F4FA1654E15900D369B2 /* impact1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "impact1-1.png"; path = "../impact1-1.png"; sourceTree = "<group>"; };
+		4D29F4FD1654E38B00D369B2 /* sample1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample1.png; sourceTree = "<group>"; };
 		4D3F750C1626F52F0054B1D7 /* 1_1btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_1btn.png; sourceTree = "<group>"; };
 		4DB5DB6D160B09F70004233D /* Flash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flash.h; sourceTree = "<group>"; };
 		4DB5DB6E160B09F70004233D /* Flash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flash.m; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		4DB61D44160A1AB500DEA620 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D29F4FD1654E38B00D369B2 /* sample1.png */,
+				4D29F4FA1654E15900D369B2 /* impact1-1.png */,
 				4DB61D45160A1AB500DEA620 /* ImpactPlus-Info.plist */,
 				4DB61D46160A1AB500DEA620 /* InfoPlist.strings */,
 				4DB61D49160A1AB500DEA620 /* main.m */,
@@ -190,6 +196,8 @@
 				4DC559E8160F013F00873389 /* Default-568h@2x.png in Resources */,
 				4DF01A3A161EF27000449C99 /* FPmain.png in Resources */,
 				4D3F750D1626F52F0054B1D7 /* 1_1btn.png in Resources */,
+				4D29F4FB1654E15900D369B2 /* impact1-1.png in Resources */,
+				4D29F4FE1654E38B00D369B2 /* sample1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

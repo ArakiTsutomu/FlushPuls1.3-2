@@ -33,6 +33,7 @@ LevelSelect *levelSelect;
     // Do any additional setup after loading the view from its nib.
     
     self.view.backgroundColor = [UIColor blackColor];
+    self.view.frame = [[UIScreen mainScreen] bounds];
     
     //タイトル画面の画像設定
     UIImage *title = [UIImage imageNamed:@"FPmain.png"];
@@ -42,7 +43,13 @@ LevelSelect *levelSelect;
     [imageView setFrame:CGRectMake(0, 0, 480, 360)];
     [self.view addSubview:imageView];
 
-    
+    UIButton *lvSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    lvSelectBtn.frame = [[UIScreen mainScreen] bounds];
+    [lvSelectBtn setFrame:CGRectMake(0, 0, self.view.bounds.size.height, self.view.bounds.size.width)];
+    [lvSelectBtn addTarget:self
+                    action:@selector(lvSelect)
+          forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:lvSelectBtn];
         
     
 }
@@ -59,11 +66,18 @@ LevelSelect *levelSelect;
     
     }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+-(void)lvSelect{
     levelSelect = [[LevelSelect alloc] initWithNibName:@"LevelSelect" bundle:nil];
     levelSelect.view.frame = self.view.bounds;
     [self.view addSubview:levelSelect.view];
 }
+
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+//    levelSelect = [[LevelSelect alloc] initWithNibName:@"LevelSelect" bundle:nil];
+//    levelSelect.view.frame = self.view.bounds;
+//    [self.view addSubview:levelSelect.view];
+//}
+
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
     return ((toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)|| (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft));

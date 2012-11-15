@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Menu : UIViewController{
+@interface Menu : UINavigationController{
     UIButton *levelSelectBtn;
-    
-    NSUserDefaults *ud;
-    NSUserDefaults *ud2;
-}
+    }
 
 @end
